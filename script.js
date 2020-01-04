@@ -130,8 +130,7 @@ function randomchar(){
     return character[Math.floor(Math.random()*character.length)];
   }
   
-  console.log(randomchar());
-  
+ 
 
 
 // **************************************
