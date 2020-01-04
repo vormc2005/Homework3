@@ -15,7 +15,7 @@ var random = {
   lower: RandomLow,
   upper: RandomUpper,
   number: RandomNumber,
- 
+ character: randomchar,
 };
 
 generateEl.addEventListener('click', () => {
@@ -23,12 +23,13 @@ generateEl.addEventListener('click', () => {
   var hasLower = lowerEl.checked;
   var hasUpper = upperEl.checked;
   var hasNumber = numbersEl.checked;
-  
+ var haschar = charactersEl.checked; 
 
   TextEl.innerText = generatePassword(
     hasLower, 
     hasUpper, 
     hasNumber, 
+    haschar,
     lentgh
     );
 
@@ -57,14 +58,14 @@ alert("Content copied to clipboard!");
 // 2. Length
 // *****************************
 
-function generatePassword(lower, upper, number, length){
+function generatePassword(lower, upper, number, character, length){
 
 let yourPassword = '';
-var typesCount = lower + upper + number;
+var typesCount = lower + upper + number+character;
 
 console.log('typesCount', typesCount);
 
-var typesArr = [{ lower }, { upper}, { number}].filter(item => Object.values(item)[0]
+var typesArr = [{ lower }, { upper}, { number}, {character}].filter(item => Object.values(item)[0]
 );
 
  if(length <=7 || length >=129){
@@ -124,7 +125,13 @@ function RandomNumber(){
 
 console.log(RandomNumber());
 
-
+function randomchar(){
+    var character = '!@#$%^&*()}{[]\|'
+    return character[Math.floor(Math.random()*character.length)];
+  }
+  
+  console.log(randomchar());
+  
 
 
 // **************************************
