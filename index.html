@@ -1,12 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Hello World<h2>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header">
+          <h2>Generate a Password</h2>
+        </div>
+
+        <!-- text area -->
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+          ></textarea>
+        </div>
+
+
+        <!-- Choices for Upper, lower, symbols, numbers ------------------------------------->
+        <div class="clickermenu">
+          <div class="clickers">
+            <label>Password length</label>
+            <input type="number" id="length" min='8' max='128' value='8' />
+          </div>
+          <!-- <div class="clickers">
+            <label>Special Characters</label> 
+            <input type="checkbox" id="characters" checked />
+          </div> -->
+          <div class="clickers">
+            <label>Uppercase letters</label> 
+            <input type="checkbox" id="upperletters" checked />
+          </div>
+          <div class="clickers">
+            <label>Lowercase letters</label> 
+            <input type="checkbox" id="lowerletters" checked />
+          </div>
+          <div class="clickers">
+            <label>Numbers</label> 
+            <input type="checkbox" id="numbers" checked />
+          </div>
+          
+        </div>
+
+<!-- -----------Generate Password button -->
+          <button id="generate" class="btn">
+            Generate Password</button>
+          </button>
+<!-- ***********Clipboard Button -->
+          <button id="clipboard" class="btn">
+            Copy to Clipboard</button>
+          </button>
+      </div>
+
+       
+        
+      </div>
+    </div>
+
+   
+  
+    <script src="script.js"></script>
+  </body>
 </html>
